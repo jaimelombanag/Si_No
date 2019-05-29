@@ -24,7 +24,9 @@
             android:textStyle="bold"
             android:textColor="@color/colorBlanco"
             android:layout_margin="90dp"
-            android:textSize="50dp"/>
+            android:textSize="50dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
@@ -34,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="120dp">
 
 
 

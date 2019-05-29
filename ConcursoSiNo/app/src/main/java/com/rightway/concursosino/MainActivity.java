@@ -149,8 +149,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             DatosTransferDTO datosTransferDTO = new DatosTransferDTO();
             datosTransferDTO.setFuncion("1");
-            //datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
-            datosTransferDTO.setIdTableta("1");
+            datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
             datosTransferDTO.setSiNo("SI");
 
             Gson gson = new Gson();
@@ -177,8 +176,8 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             DatosTransferDTO datosTransferDTO = new DatosTransferDTO();
             datosTransferDTO.setFuncion("1");
-            //datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
-            datosTransferDTO.setIdTableta("1");
+            datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+            //datosTransferDTO.setIdTableta("1");
             datosTransferDTO.setSiNo("NO");
 
             Gson gson = new Gson();
@@ -225,8 +224,8 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 DatosTransferDTO datosTransferDTO = new DatosTransferDTO();
                 datosTransferDTO.setFuncion("0");
-                //datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
-                datosTransferDTO.setIdTableta("1");
+                datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+
 
                 Gson gson = new Gson();
                 String json = gson.toJson(datosTransferDTO);

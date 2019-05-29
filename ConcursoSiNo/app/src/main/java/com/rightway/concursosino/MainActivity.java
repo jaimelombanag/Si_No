@@ -73,7 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 Gson gson=new Gson();
                 DatosTransferDTO informacion = null;
                 try {
+                    Log.i("SiNo", datos);
                     informacion = gson.fromJson(datos, DatosTransferDTO.class);
+
+                    Log.i("SiNo",  "==========Preginta "  + informacion.getPregunta());
                     txt_pregunta.setText(informacion.getPregunta());
 
                     if(informacion.getAccion().equalsIgnoreCase("0")){
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     }else if(informacion.getAccion().equalsIgnoreCase("1")){
                         bloqueo = false;
                     }else if(informacion.getAccion().equalsIgnoreCase("2")){
-                        bloqueo = false;
+                        bloqueo = true;
                         btn_si.setBackgroundResource(R.drawable.boton_si);
                         btn_no.setBackgroundResource(R.drawable.boton_no);
                     }
@@ -126,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
         LeerIp();
         LeerId();
-        //startTimer();
+        startTimer();
 
 
     }
@@ -146,7 +149,8 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             DatosTransferDTO datosTransferDTO = new DatosTransferDTO();
             datosTransferDTO.setFuncion("1");
-            datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+            //datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+            datosTransferDTO.setIdTableta("1");
             datosTransferDTO.setSiNo("SI");
 
             Gson gson = new Gson();
@@ -173,7 +177,8 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             DatosTransferDTO datosTransferDTO = new DatosTransferDTO();
             datosTransferDTO.setFuncion("1");
-            datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+            //datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+            datosTransferDTO.setIdTableta("1");
             datosTransferDTO.setSiNo("NO");
 
             Gson gson = new Gson();
@@ -213,14 +218,15 @@ public class MainActivity extends AppCompatActivity {
     private class SendMultifuncion extends TimerTask {
         public void run() {
             contadorPregunta++;
-            if(contadorPregunta > 10){
+            if(contadorPregunta > 5){
                 contadorPregunta = 0;
 
 
                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 DatosTransferDTO datosTransferDTO = new DatosTransferDTO();
                 datosTransferDTO.setFuncion("0");
-                datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+                //datosTransferDTO.setIdTableta(sharedPreferences.getString(constantes.IdConcursante, ""));
+                datosTransferDTO.setIdTableta("1");
 
                 Gson gson = new Gson();
                 String json = gson.toJson(datosTransferDTO);

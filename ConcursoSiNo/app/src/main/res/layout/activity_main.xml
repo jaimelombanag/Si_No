@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pregunta">
+    android:background="@drawable/fondo">
 
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_gravity="top"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/pregunta_cuadro">
 
 
         <TextView
@@ -22,8 +23,8 @@
             android:text="ACA VA LA PREGUNTA"
             android:textStyle="bold"
             android:textColor="@color/colorBlanco"
-            android:layout_margin="25dp"
-            android:textSize="30dp"/>
+            android:layout_margin="90dp"
+            android:textSize="50dp"/>
 
     </LinearLayout>
 
@@ -32,14 +33,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="80dp">
 
 
 
         <Button
             android:id="@+id/btn_si"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
             android:background="@drawable/boton_si"
             tools:layout_editor_absoluteX="98dp"
             tools:layout_editor_absoluteY="175dp"
@@ -48,8 +50,8 @@
 
         <Button
             android:id="@+id/btn_no"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
             android:background="@drawable/boton_no"
             tools:layout_editor_absoluteX="436dp"
             tools:layout_editor_absoluteY="175dp"

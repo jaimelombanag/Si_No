@@ -63,7 +63,7 @@ public class ConnexionTCP {
                     SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
                     Log.i(TAG, MODULO + "================================Io:" + sharedPreferences.getString(constantes.IPSocket, "")+ "------");
                     String IP = sharedPreferences.getString(constantes.IPSocket, "");
-                    //String IP = "200.91.204.38";
+                    //String IP = "11.242.2.11";
                     int Puerto = constantes.PuertoSocket;
                     socket = new Socket(IP, Puerto);
                     socket.setSoTimeout(1000);
@@ -144,14 +144,14 @@ public class ConnexionTCP {
 
                 Intent new_intent = new Intent();
                 new_intent.putExtra("CMD", "0");
-                new_intent.putExtra("DATA", datos);
+                new_intent.putExtra("DATOS", datos);
                 new_intent.setAction(ACTION_STRING_ACTIVITY);
                 context.sendBroadcast(new_intent);
 
             }else  if (informacion.getFuncion().equalsIgnoreCase("1")) {
                 Intent new_intent = new Intent();
                 new_intent.putExtra("CMD", "1");
-                new_intent.putExtra("DATA", datos);
+                new_intent.putExtra("DATOS", datos);
                 new_intent.setAction(ACTION_STRING_ACTIVITY);
                 context.sendBroadcast(new_intent);
             }
